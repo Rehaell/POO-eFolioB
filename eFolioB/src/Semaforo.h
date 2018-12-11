@@ -9,7 +9,6 @@
 #define SEMAFORO_H_
 
 #include <iostream>
-#include <ctime>
 #include <vector>
 #include <string>
 #include <thread>
@@ -21,8 +20,7 @@ using namespace std;
 
 class Semaforo {
 
-	clock_t temporizador;
-	vector<clock_t> contador_estado;
+	vector<int> contador_estado;
 
 public:
 
@@ -34,9 +32,9 @@ public:
 	} estado;
 
 	Semaforo();
-
+	~Semaforo() {}
 	int retornaStatus() const;
-	void mudaEstado(Estados novo_estado);
+	void mudaEstado();
 
 };
 

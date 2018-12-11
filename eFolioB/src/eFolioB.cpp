@@ -15,12 +15,7 @@ int main() {
 	Semaforo semaforo_rodoviario;
 
 	do{
-		semaforo_rodoviario.mudaEstado(semaforo_rodoviario.desligado);
-		semaforo_rodoviario.mudaEstado(semaforo_rodoviario.vermelho);
-		semaforo_rodoviario.mudaEstado(semaforo_rodoviario.amarelo);
-		semaforo_rodoviario.mudaEstado(semaforo_rodoviario.verde);
-		semaforo_rodoviario.mudaEstado(semaforo_rodoviario.amarelo);
-		semaforo_rodoviario.mudaEstado(semaforo_rodoviario.vermelho);
+		semaforo_rodoviario.mudaEstado();
 	} while (true);
 
 	cout << "Adeus";

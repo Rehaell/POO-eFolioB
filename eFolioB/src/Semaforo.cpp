@@ -7,7 +7,7 @@
 
 #include "Semaforo.h"
 
-Semaforo::Semaforo(): estado(desligado), temporizador(0), contador_estado(0){
+Semaforo::Semaforo(): estado(desligado) {
 	cout << "Semaforo criado" << endl;
 }
 
@@ -22,27 +22,32 @@ int Semaforo::retornaStatus() const {
 	return estado;
 }
 
-void Semaforo::mudaEstado(Estados novo_estado){
+void Semaforo::mudaEstado(){
 
-	switch (novo_estado){
+	switch (estado){
 		case desligado:
-			estado = desligado;
+			estado = verde;
 			retornaStatus();
 			break;
 		case vermelho: //Vermelho
-			estado = vermelho;
 			retornaStatus();
-			this_thread::sleep_for(chrono::seconds(5));
-			break;
+			this_thread::sleep_for(chrono::seconds(30));
 		case amarelo: //Amarelo
-			estado = amarelo;
-			retornaStatus();
-			this_thread::sleep_for(chrono::seconds(2));
+			if (estado == vermelho){
+				estado = amarelo;
+				retornaStatus();
+				estado = verde;
+			} else {
+				estado = amarelo;
+				retornaStatus();
+				estado = vermelho;
+			}
+			this_thread::sleep_for(chrono::seconds(25));
 			break;
 		case verde: //Verde
-			estado = verde;
 			retornaStatus();
-			this_thread::sleep_for(chrono::seconds(1));
+			this_thread::sleep_for(chrono::seconds(5));
+			estado = amarelo;
 			break;
 		default:
 			estado = desligado;
