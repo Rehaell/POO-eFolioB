@@ -8,7 +8,8 @@
 #include "Semaforo.h"
 
 Semaforo::Semaforo(): estado(desligado) {
-	cout << "Semaforo criado" << endl;
+	cout << "Semaforo default criado" << endl;
+	retornaStatus();
 }
 
 int Semaforo::retornaStatus() const {

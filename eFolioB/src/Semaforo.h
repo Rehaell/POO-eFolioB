@@ -34,7 +34,7 @@ public:
 	~Semaforo() {}
 
 	int retornaStatus() const;
-	virtual void mudaEstadoAuto() { cout << "Default"; }
+	virtual void mudaEstadoAuto() {}
 	inline void mudaParaEstado(Estados novo_estado) { estado = novo_estado; }
 
 };

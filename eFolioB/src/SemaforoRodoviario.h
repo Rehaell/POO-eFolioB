@@ -13,6 +13,9 @@
 class SemaforoRodoviario: public Semaforo {
 
 public:
+	SemaforoRodoviario();
+	~SemaforoRodoviario(){}
+
 	void mudaEstadoAuto();
 };
 

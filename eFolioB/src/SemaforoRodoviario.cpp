@@ -7,6 +7,12 @@
 
 #include "SemaforoRodoviario.h"
 
+SemaforoRodoviario::SemaforoRodoviario(){
+	cout << "Semaforo Rodoviario criado!" << endl;
+	estado = desligado;
+	retornaStatus();
+}
+
 void SemaforoRodoviario::mudaEstadoAuto(){
 
 	switch (estado){

@@ -12,6 +12,12 @@
 
 class SemaforoFerroviario: public Semaforo {
 
+	bool sinal_sonoro;
+public:
+	SemaforoFerroviario();
+	~SemaforoFerroviario(){}
+
+	void mudaEstadoAuto();
 };
 
 #endif /* SEMAFOROFERROVIARIO_H_ */
