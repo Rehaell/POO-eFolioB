@@ -2,7 +2,7 @@
  * Semaforo.h
  *
  *  Created on: Dec 11, 2018
- *      Author: rehaell
+ *      Author: rui romao
  */
 
 #ifndef SEMAFORO_H_
@@ -11,24 +11,32 @@
 #include <iostream>
 #include <ctime>
 #include <vector>
+#include <string>
+#include <thread>
+#include <chrono>
+
+
 
 using namespace std;
 
 class Semaforo {
-	enum {
+
+	clock_t temporizador;
+	vector<clock_t> contador_estado;
+
+public:
+
+	enum Estados {
 		desligado = 0,
 		vermelho,
 		amarelo,
 		verde,
-	} status;
-
-	clock_t temporizador;
-	vector<int> contador_status;
-
-public:
+	} estado;
 
 	Semaforo();
 
+	int retornaStatus() const;
+	void mudaEstado(Estados novo_estado);
 
 };
 

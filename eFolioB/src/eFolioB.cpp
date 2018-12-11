@@ -1,15 +1,32 @@
 //============================================================================
 // Name        : eFolioB.cpp
-// Author      : Rui Romao
+// Author      : rui romao
 // Version     :
 // Copyright   : 
-// Description : Hello World in C++, Ansi-style
 //============================================================================
 
 #include <iostream>
+#include "Semaforo.h"
+
 using namespace std;
 
 int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+
+	Semaforo semaforo_rodoviario;
+
+	do{
+		semaforo_rodoviario.mudaEstado(semaforo_rodoviario.desligado);
+		semaforo_rodoviario.mudaEstado(semaforo_rodoviario.vermelho);
+		semaforo_rodoviario.mudaEstado(semaforo_rodoviario.amarelo);
+		semaforo_rodoviario.mudaEstado(semaforo_rodoviario.verde);
+		semaforo_rodoviario.mudaEstado(semaforo_rodoviario.amarelo);
+		semaforo_rodoviario.mudaEstado(semaforo_rodoviario.vermelho);
+	} while (true);
+
+	cout << "Adeus";
+
+
+
+
 	return 0;
 }
