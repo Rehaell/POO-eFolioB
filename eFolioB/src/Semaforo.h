@@ -20,10 +20,7 @@ using namespace std;
 
 class Semaforo {
 
-	vector<int> contador_estado;
-
-public:
-
+protected:
 	enum Estados {
 		desligado = 0,
 		vermelho,
@@ -31,10 +28,14 @@ public:
 		verde,
 	} estado;
 
+public:
+
 	Semaforo();
 	~Semaforo() {}
+
 	int retornaStatus() const;
-	void mudaEstado();
+	virtual void mudaEstadoAuto() { cout << "Default"; }
+	inline void mudaParaEstado(Estados novo_estado) { estado = novo_estado; }
 
 };
 

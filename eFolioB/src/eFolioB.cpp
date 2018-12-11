@@ -6,16 +6,16 @@
 //============================================================================
 
 #include <iostream>
-#include "Semaforo.h"
+#include "SemaforoRodoviario.h"
 
 using namespace std;
 
 int main() {
 
-	Semaforo semaforo_rodoviario;
+	SemaforoRodoviario semaforo_rodoviario;
 
 	do{
-		semaforo_rodoviario.mudaEstado();
+		semaforo_rodoviario.mudaEstadoAuto();
 	} while (true);
 
 	cout << "Adeus";
