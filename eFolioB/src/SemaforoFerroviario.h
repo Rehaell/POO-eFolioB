@@ -17,7 +17,9 @@ public:
 	SemaforoFerroviario();
 	~SemaforoFerroviario(){}
 
-	void mudaEstadoAuto();
+	void mudaEstadoAuto(signed int posicao_comboio);
+	void tocaSinalSonoro(bool interruptor);
+	inline bool retornaSinalSonoro() { return sinal_sonoro; }
 };
 
 #endif /* SEMAFOROFERROVIARIO_H_ */

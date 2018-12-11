@@ -11,6 +11,7 @@ SemaforoRodoviario::SemaforoRodoviario(){
 	cout << "Semaforo Rodoviario criado!" << endl;
 	estado = desligado;
 	retornaStatus();
+
 }
 
 void SemaforoRodoviario::mudaEstadoAuto(){
@@ -22,7 +23,7 @@ void SemaforoRodoviario::mudaEstadoAuto(){
 			break;
 		case vermelho:
 			retornaStatus();
-			this_thread::sleep_for(chrono::seconds(30));
+			this_thread::sleep_for(chrono::seconds(35));
 		case amarelo:
 			if (estado == vermelho){
 				mudaParaEstado(amarelo);

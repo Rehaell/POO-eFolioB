@@ -31,11 +31,14 @@ protected:
 public:
 
 	Semaforo();
-	~Semaforo() {}
+	~Semaforo(){}
 
 	int retornaStatus() const;
-	virtual void mudaEstadoAuto() {}
 	inline void mudaParaEstado(Estados novo_estado) { estado = novo_estado; }
+
+	virtual void mudaEstadoAuto(){}
+	virtual void mudaEstadoAuto(int posicao_comboio){}
+
 
 };
 

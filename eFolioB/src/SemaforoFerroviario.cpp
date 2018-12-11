@@ -12,8 +12,31 @@ SemaforoFerroviario::SemaforoFerroviario(): sinal_sonoro(false) {
 	retornaStatus();
 }
 
-void SemaforoFerroviario::mudaEstadoAuto(){
+void SemaforoFerroviario::tocaSinalSonoro(bool interruptor){
+	if (interruptor){
+		cout << "!PIIIIIIIIIIIIIIIII!" << endl;
+		sinal_sonoro = true;
+	} else
+		sinal_sonoro = false;
+	retornaStatus();
+}
 
+void SemaforoFerroviario::mudaEstadoAuto(signed int posicao_comboio){
+	if (posicao_comboio <=5 && posicao_comboio >=-5){
+		if (!retornaSinalSonoro()){
+			mudaParaEstado(amarelo);
+			mudaParaEstado(vermelho);
+		} else
+			mudaParaEstado(vermelho);
+		tocaSinalSonoro(true);
+	} else {
+		if (retornaSinalSonoro()){
+			mudaParaEstado(amarelo);
+			mudaParaEstado(verde);
+		} else
+			mudaParaEstado(verde);
+		tocaSinalSonoro(false);
+	}
 };
 
 

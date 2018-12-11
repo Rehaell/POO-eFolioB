@@ -7,18 +7,15 @@
 
 #include "Semaforo.h"
 
-Semaforo::Semaforo(): estado(desligado) {
-	cout << "Semaforo default criado" << endl;
-	retornaStatus();
-}
+Semaforo::Semaforo(): estado(desligado) {}
 
 int Semaforo::retornaStatus() const {
-	switch (estado){
+	switch (this->estado){
 		case desligado:	cout << "Semaforo desactivado\n\n"     << endl;	break;
 		case vermelho:	cout << "!!!!! Vermelho !!!!!\n\n"     << endl;	break;
 		case amarelo:	cout << "! Amarelo !\n\n"              << endl; break;
 		case verde:		cout << "Verde!\n\n"                   << endl; break;
 		default:		cout << "XXX Estado invalido XXXX\n\n" << endl; break;
 	};
-	return estado;
+	return this->estado;
 }
