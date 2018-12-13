@@ -27,7 +27,7 @@ void SemaforoRodoviario::mudaEstadoAuto(){
 
 	//De acordo com o "estado" efectua a respectiva operacao
 	switch (estado){
-		case desligado: //caso o semaforo se encontre desactivado - activa-o passando o seu estado para verde
+		case desligado: //caso o semaforo se encontre desactivad, activa-o passando o seu estado para verde
 			retornaStatus();
 			mudaParaEstado(verde);
 			break;
