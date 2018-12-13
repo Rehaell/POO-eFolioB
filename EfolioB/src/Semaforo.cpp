@@ -7,8 +7,18 @@
 
 #include "Semaforo.h"
 
+//Cria o objecto semaforo no estado default de desligado
 Semaforo::Semaforo(): estado(desligado) {}
 
+/****************************************************************************************
+ * NOME: retornaStatus		                                                 			*
+ * -------------------------------------------------------------------------------------*
+ * VARIAVEIS: NIL               	                                         			*
+ * -------------------------------------------------------------------------------------*
+ * FUNCAO: apresentar na consola o estado actual em formato texto e retornar o estado 	*
+ * 		   actual em formato inteiro para possivel utilizacao							*
+ *                                                                         				*
+ ***************************************************************************************/
 int Semaforo::retornaStatus() const {
 	switch (this->estado){
 		case desligado:	cout << "Semaforo desactivado\n\n"     << endl;	break;

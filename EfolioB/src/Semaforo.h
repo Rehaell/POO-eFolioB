@@ -18,6 +18,28 @@
 
 using namespace std;
 
+/****************************************************************************************
+ *  NOME: Classe Semaforo                         										*
+ *  ------------------------------------------------------------------------------------*
+ *  DESCRICAO:                                    										*
+ *  Classe base Semaforo, que contem uma variavel enumerado estado do tipo Estados e 	*
+ *  que contem o estado actual do semaforo.                  							*
+ *  ------------------------------------------------------------------------------------*
+ *  METODOS:                                                                        	*
+ *  int retornaStatus() - retorna um int correspondente ao estado actual do semaforo	*
+ *  					  e paralelamente imprime na consola o estado actual.			*
+ *  					  																*
+ *  void mudaParaEstado(Estados novo_estado) - altera o estado actual para o valor que  *
+ *                                             e' passado 'a funcao.                    *
+ *                                             											*
+ *  virtual void mudaEstadoAuto() - metodo virtual a usar numa classe filha.            *
+ *  																					*
+ *  virtual void mudaEstadoAuto(int posicao_comboio) - metodo virtual a usar numa 		*
+ *  												   classe filha em que e' 			*
+ *  												   especificado uma distancia para 	*
+ *  												   um possivel comboio.				*
+ *  												   									*
+ ****************************************************************************************/
 class Semaforo {
 
 protected:
