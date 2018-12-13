@@ -24,6 +24,7 @@ void SemaforoRodoviario::mudaEstadoAuto(){
 		case vermelho:
 			retornaStatus();
 			this_thread::sleep_for(chrono::seconds(35));
+			//no break - continua sempre do vermelho para o amarelo passados 35 segundos.
 		case amarelo:
 			if (estado == vermelho){
 				mudaParaEstado(amarelo);
@@ -34,11 +35,11 @@ void SemaforoRodoviario::mudaEstadoAuto(){
 				retornaStatus();
 				mudaParaEstado(vermelho);
 			}
-			this_thread::sleep_for(chrono::seconds(25));
+			this_thread::sleep_for(chrono::seconds(5));
 			break;
 		case verde:
 			retornaStatus();
-			this_thread::sleep_for(chrono::seconds(5));
+			this_thread::sleep_for(chrono::seconds(25));
 			mudaParaEstado(amarelo);
 			break;
 		default:

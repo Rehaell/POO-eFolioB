@@ -18,13 +18,13 @@ void SemaforoFerroviario::tocaSinalSonoro(bool interruptor){
 		sinal_sonoro = true;
 	} else
 		sinal_sonoro = false;
-	retornaStatus();
 }
 
 void SemaforoFerroviario::mudaEstadoAuto(signed int posicao_comboio){
 	if (posicao_comboio <=5 && posicao_comboio >=-5){
 		if (!retornaSinalSonoro()){
 			mudaParaEstado(amarelo);
+			retornaStatus();
 			mudaParaEstado(vermelho);
 		} else
 			mudaParaEstado(vermelho);
@@ -32,11 +32,13 @@ void SemaforoFerroviario::mudaEstadoAuto(signed int posicao_comboio){
 	} else {
 		if (retornaSinalSonoro()){
 			mudaParaEstado(amarelo);
+			retornaStatus();
 			mudaParaEstado(verde);
 		} else
 			mudaParaEstado(verde);
 		tocaSinalSonoro(false);
 	}
+	retornaStatus();
 };
 
 
